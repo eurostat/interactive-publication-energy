@@ -1,0 +1,89 @@
+{
+	"imgYourLogo": "<img id=\"yourlogo\" src=\"img/austria-logo.png\" />",
+
+	"appName": "My energy in a bubble",
+	"dataNotAvailable": "Data not available.",
+	"countriesTitle" : "Click to select a country", 
+    "embed-icon": "Embed",
+	"embed_instruction": "Copy this code and paste it in your Website.",
+	"twitter-icon": "Twitter",
+    "facebook-icon": "Facebook",
+    "embed": "Embed this chart", 
+	"modalClose": "Close",  
+	"linkToDataset" : "Access to dataset",
+	
+	"footerSource" : "Source : Eurostat – ",
+	"footerLinkToDataset" : "access to dataset",
+
+	"decimal_separator" : ".",
+	
+
+	"buttonEmbedTitle": "Copy this code and paste it in your Website.",
+	"linkShare" : "Share this page",
+	"labelHighlightMS" : "Highlight a Member State",
+	"labelHighlightEFTA" : "Highlight an EFTA country",
+	"linkInfo" : "Info",
+	"buttonHighlight" : "Highlight a country",
+	"buttonShare": "Share this page",
+	"labelLinkToPage": "Link to this page:",
+	"emailPresentation": "Playful application to compare the EU Member States and EFTA countries for about <b>50 indicators</b>. When changing between indicators, the transparent country bubbles move to another position on the screen, depending on its value on the horizontal scale.",
+	"embedText":"To embed this page on another web page, just copy this code:",
+
+	"labelSourceDataset": "Source: Eurostat -&nbsp;",
+	"labelSourceAccess": "access to dataset",
+
+	"labelValue" : "Value",
+	"labelCountry" : "Country",
+	"labelRandom" : "The order in which the country bubbles appear on the vertical axis is purely random.",
+	"labelNoData" : "No data",
+
+
+
+
+
+
+	
+	"EU27_2020": "EU",
+	"EU27": "EU27",
+	"EU28": "EU28",
+	"EA19": "Euro area",
+	"AT": "Austria",
+	"BE": "Belgium",
+	"BG": "Bulgaria",
+	"CY": "Cyprus",
+	"CZ": "Czechia",
+	"DE": "Germany",
+	"DK": "Denmark",
+	"EE": "Estonia",
+	"EL": "Greece",
+	"ES": "Spain",
+	"FI": "Finland",
+	"FR": "France",
+	"HR": "Croatia",
+	"HU": "Hungary",
+	"IE": "Ireland",
+	"IT": "Italy",
+	"LT": "Lithuania",
+	"LU": "Luxembourg",
+	"LV": "Latvia",
+	"MT": "Malta",
+	"NL": "Netherlands",
+	"PL": "Poland",
+	"PT": "Portugal",
+	"RO": "Romania",
+	"SE": "Sweden",
+	"SI": "Slovenia",
+	"SK": "Slovakia",
+	"UK": "United Kingdom",
+	"CH": "Switzerland",
+	"IS": "Iceland",
+	"NO": "Norway",
+
+	"energy.title": "Share of energy products in total energy available, 2020 (in %)",
+	"energy.barChartTitle": "Energy mix for",
+	"energy.description": "Data correspond to the share of solid fossil fuels, petroleum products, natural gas, nuclear energy and renewable energy in the total energy available (gross inland consumption) for the EU as a whole and for each country. The bubbles show a comparison between countries for each energy product. The bar chart on the right provides the share of each energy product in the total energy available for the selected country. When selecting the country and the energy product in the first part, the energy mix of the chosen country will be displayed automatically in the bar chart on the right.",
+	"energy.footer" : "The negative values for the category 'Other' for certain Member States are due to net exports of electricity. ",
+
+	"energy.share.twitter" : "Shedding light on energy in the EU: Share of energy products in total energy available #Eurostat #Energy"
+
+}

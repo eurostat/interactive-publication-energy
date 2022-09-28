@@ -1,0 +1,9 @@
+themaId,themaName,themaImg,themaGradiantMinColor,themaGradiantMaxColor,themaColor
+0,"Économie et finances","thema1.png","#DBB1C8","#A0347B","#B76692",
+1,"Population et conditions sociales","thema2.png","#FBCD8B","#EE5D31","#F3A128"
+2,"Industrie, commerce et services","thema3.png","#9AD6EF","#1377BC","#199BD7"
+3,"Agriculture, sylviculture et pêche","thema4.png","#AAD292","#5A8240","#6CB145"
+4,"Commerce international","international.png","#D65D7C","#A4003A","#BC002F"
+5,"Transports","thema5.png","#D1D484","#7B8629","#B9C033"
+6,"Environnement et énergie","thema6.png","#83B6B7","#12827D","#1A9E9D"
+7,"Science et technologie","thema7.png","#F8B078","#EB462F","#F38231"

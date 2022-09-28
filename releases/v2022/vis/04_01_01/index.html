@@ -1,0 +1,425 @@
+<!--[if IE]><!DOCTYPE html><!--><!--
+    /******************************************************************/
+  /* "eurostat-charts" - v"1.0.9-ENERGY-mod-stable"    */
+  /* http://ec.europa.eu/eurostat https://ec.europa.eu/eurostat     */
+  /* Author: Sven Kuncikowski <sven.kuncikowski@sword-group.com>    */
+  /* "License: European Union Public Licence (EUPL v.1.2)"          */
+  /******************************************************************/
+  <![endif]--><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+    />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Piwik -->
+    <script>
+      function getParentUrl() {
+        var isInIframe = parent !== window,
+          parentUrl = null
+
+        if (isInIframe) {
+          parentUrl = document.referrer
+        }
+        return parentUrl
+      }
+      function writePiwik() {
+        document.write(
+          '<script defer src="//europa.eu/webtools/load.js" type="text/javascript"></sc' +
+            'ript>'
+        )
+        document.write('<script type="application/json">')
+        document.write(
+          '{ "utility" : "piwik", "siteID" : 59, "sitePath" : ["ec.europa.eu\/eurostat"] }'
+        )
+        document.write('</sc' + 'ript>')
+      }
+      var parentLocation = getParentUrl()
+      if (!parentLocation) {
+        var currentHostname = window.location.hostname
+        if (currentHostname !== 'localhost') {
+          writePiwik()
+        }
+      } else if (
+        parentLocation &&
+        parentLocation.indexOf('ec.europa.eu') !== -1
+      ) {
+        writePiwik()
+      }
+    </script>
+    <!-- End Piwik Code -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <link rel="preload" as="script" href="./l10n/localisations.js" />
+    <link rel="preload" as="script" href="./config/configuration.js" />
+    <link rel="preload" as="script" href="./config/indicators.js" />
+    <link
+      rel="preload"
+      href="./fonts/open-sans-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/open-sans-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/open-sans-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  <meta name="description" content="Greenhouse gas emissions"><meta property="og:title" content="Shedding light on energy in the EU: Greenhouse gas emissions"><meta property="og:description" content="Greenhouse gas emissions"><meta property="og:url" content="https://ec.europa.eu/eurostat/cache/infographs/energy/vis/04_01_01"><meta property="og:image" content="https://ec.europa.eu/eurostat/cache/infographs/energy/vis/04_01_01/sharing/image.jpg"><meta property="og:image:alt" content="Greenhouse gas emissions"><link href="./styles/vendors.5bf8d2d4cc34f5b1a66e.css" rel="stylesheet"><link href="./styles/styles.86b1863e57fa1387520e.css" rel="stylesheet"></head>
+
+  <body>
+    <div
+      id="loader"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: white;
+      "
+    >
+      <div
+        style="position: fixed; height: 10%; width: 10%; left: 45%; top: 45%"
+      >
+        <div class="row justify-content-center align-items-center fa-3x">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="global"
+      class="h-100 d-flex flex-column container-fluid global d-none"
+    >
+      <div
+        id="legend-container-desktop"
+        class="legendcontainer-desktop d-none"
+      ></div>
+
+      <!-- desktop navbar start -->
+      <div
+        id="navbar-desktop-container"
+        class="d-none d-flex flew-row flex-grow-0"
+      >
+        <div class="col">
+          <nav
+            id="navbar-desktop"
+            class="navbar fixed-top navbar-light d-none"
+            role="navigation"
+            style="background-color: #ffffff"
+          >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavDesktop"
+              aria-controls="navbarNavDesktop"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDesktop">
+              <ul id="social-container-desktop" class="navbar-nav mr-auto"></ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-row-reverse">
+            <div id="logo-desktop" class=""></div>
+            <div id="nsi-desktop" class="p2 nsi"></div>
+          </div>
+        </div>
+      </div>
+      <!-- desktop navbar end-->
+      <div
+        id="navbar-mobile-container"
+        class="d-flex flex-row flex-grow-0 d-none"
+      >
+        <div class="d-flex">
+          <nav
+            id="navbar-mobile"
+            class="d-none navbar navbar-light"
+            role="navigation"
+            style="background-color: #ffffff"
+          >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavMobile"
+              aria-controls="navbarNavMobile"
+              aria-expanded="true"
+              aria-label="Toggle navigation"
+            >
+              <span
+                class="navbar-toggler-icon navbar-toggler-icon-mobile"
+              ></span>
+            </button>
+
+            <div class="collapse navbar-collapse-mobile" id="navbarNavMobile">
+              <span id="choose-country" class="navbar-text d-none">
+                choose-country
+              </span>
+
+              <ul
+                id="countries-list-mobile"
+                class="navbar-nav mr-auto mt-2 mt-lg-0 d-none"
+              >
+                <li class="nav-item">
+                  <div
+                    id="countries-container-mobile"
+                    class="d-none dropdown-menu-show countries-mobile-size"
+                    aria-labelledby="navbarDropdownMenuLink"
+                    style="
+                      border: 0.5px black solid;
+                      z-index: 99;
+                      margin-left: 5px;
+                      width: 105%;
+                      background-color: #ffffff;
+                    "
+                  ></div>
+                  <div id="countries-warning" class="d-none">
+                    countries-warning
+                  </div>
+                </li>
+              </ul>
+              <ul
+                id="social-container-mobile"
+                class="navbar-nav mr-auto"
+                style="
+                  border: 0.5px black solid;
+                  z-index: 99;
+                  margin-left: 5px;
+                  width: 105%;
+                  background-color: #ffffff;
+                "
+              ></ul>
+            </div>
+          </nav>
+        </div>
+        <div class="d-flex flex-fill justify-content-end">
+          <div id="mobile-nsi" class="p2 nsi"></div>
+          <div id="logo-mobile" class=""></div>
+        </div>
+      </div>
+      <!-- container -->
+
+      <div id="title-col" class="text-center">
+        <div id="chart_title" class="flex-grow-0 title d-none"></div>
+      </div>
+      <div
+        id="title-row-mobile"
+        class="row text-center d-none"
+        style="margin-bottom: 3px"
+      >
+        <div class="col">
+          <div id="indicators-container-mobile" class="form-group">
+            <select
+              id="indicators-mobile"
+              class="selectpicker form-control indicator-select"
+              title="Select indicator"
+              data-width="fit"
+            ></select>
+          </div>
+        </div>
+      </div>
+
+      <div id="subtitle-col" class="text-center d-none">
+        <div id="chart_subtitle" class="subtitle"></div>
+      </div>
+      <!-- subtitle-col-->
+
+      <form>
+        <div
+          id="form-container"
+          class="form-row align-items-center justify-content-center"
+        >
+          <div id="countries-container-desktop" class="col-auto d-none">
+            <select
+              id="countries-desktop"
+              class="selectpicker country-select"
+              multiple
+              data-actions-box="true"
+              data-selected-text-format="count > 1"
+              title="Select countries"
+              data-size="7"
+              data-width="260px"
+              data-style="btn-flags"
+            ></select>
+          </div>
+          <div id="indicators-container-desktop" class="d-none">
+            <select
+              id="indicators-desktop"
+              class="selectpicker indicator-select"
+              title="Select indicator"
+              data-size="7"
+              data-width="fit"
+            ></select>
+          </div>
+        </div>
+      </form>
+      <!-- treechart area start here -->
+      <div class="row">
+        <div class="col-9">
+          <div id="tree"></div>
+        </div>
+        <div class="col-3 text-right">
+          <div id="barchart">
+            <div id="footnotes"></div>
+          </div>
+        </div>
+      </div>
+      <!-- tree chart area end here -->
+      <div id="dummy">
+        <div class="row text-center">
+          <div class="col mx-auto">
+            <div id="chart"></div>
+          </div>
+        </div>
+        <div class="col mx-auto">
+          <div
+            id="legend-container-mobile"
+            class="legendcontainer-mobile"
+            style="margin-bottom: 5px"
+          ></div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12 mx-auto">
+            <div
+              id="icons-container"
+              class="d-flex justify-content-center"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div id="legend-col" class="col mx-auto">
+          <div id="legendcontainer" class="legendcontainer d-none"></div>
+        </div>
+      </div>
+
+      <div id="footnote-container" class="row text-center">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div
+              id="footnote-link"
+              style="float: left"
+              class="footnote d-none"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="bookmark-container" class="row text-center">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div id="bookmark-link" class="bookmark"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="container-modal-informations"
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="mySmallModalLabel"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div id="information-header" class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="informations" class="modal-body"></div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="container-modal-embed"
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="mySmallModalLabel"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div id="embed-header" class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="embed" class="modal-body"></div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="container-modal-share"
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="mySmallModalLabel"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div id="share-header" class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="./l10n/localisations.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./config/configuration.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./config/indicators.js"
+      charset="utf-8"
+    ></script>
+  <script type="text/javascript" src="./scripts/0d18ef33e9d763374136.runtime.js"></script><script type="text/javascript" src="./scripts/vendors-52ad42b7b9b18a4abcf7.js"></script><script type="text/javascript" src="./scripts/styles-cbdafe6feeb03c5c261d.js"></script><script type="text/javascript" src="./scripts/main-374f09747440bf9a93f7.js"></script></body>
+</html>

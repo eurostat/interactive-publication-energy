@@ -1,0 +1,7 @@
+themaId,themaName,themaImg,themaGradiantMinColor,themaGradiantMaxColor,themaColor,product,displayInBubble,value
+0,"Total petroleum products","oil.png","#6684B6","#4C6A9C","#193769",O4000XBIO,1,0
+1,"Natural gas","gaz.png","#FFAE30","#DE7B00","#F79416",G3000,1,0
+2,"Renewable energy","reneawables.png","#67C545","#4DAB2B","#50A832",RA000,0,0
+3,"Nuclear energy","nuclear.png","#EC64B7","#D34B9E","#B93184",N900H,1,0
+4,"Solid fossil fuels","coal.png","#A8593D","#8E3F23","#8E3F23",C0000X0350-0370|C0350-0370|P1000|S2000|W6100_6220,1,0
+,"Other","others.png","#5CF0EB","#42D6D1","#B4B4B4",E7000|H8000,0,0

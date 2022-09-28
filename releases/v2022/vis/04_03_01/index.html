@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- Version 0.4.0 - 23.03.2018 -->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+		<meta property="og:title" content="Shedding light on energy in the EU: Share of energy from renewable sources"/>
+		<meta property="og:site_name" content="Shedding light on energy in the EU: Share of energy from renewable sources"/>
+	
+	
+		<meta property="og:image" content="https://ec.europa.eu/eurostat/cache/infographs/energy/vis/04_03_01/energy_04_03_01b.png"/>
+	
+
+	<title>
+	</title>
+
+<link href="npm.billboard.js.a000f7d600be74495dc6.css" rel="stylesheet"><link href="npm.bootstrap-select-v4.57f7f768c835330fddb5.css" rel="stylesheet"><link href="npm.bootstrap.6cb31cde53b669cbef98.css" rel="stylesheet"><link href="stackedbarchart.a194882f477e6180325b.css" rel="stylesheet"></head>
+
+    <body>
+		<div class="container-fluid" id="global">
+				<div id="header" class="row text-center">
+						<div class="col mx-auto">
+							<header id="navbar" class="navbar navbar-expand-sm navbar-light" style="background-color: #ffffff;">
+									<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDesktop" aria-controls="navbarNavDesktop" aria-expanded="false" aria-label="Toggle navigation">
+											<span class="navbar-toggler-icon"></span>
+										</button>
+										<div id="logoConteiner" class="navbar-brand logo float-right order-2" >
+											<div id='nsiConteiner'>
+											</div>
+											<a id="logo-desktop" href="https://ec.europa.eu/eurostat" >
+												<img class="img-fluid" src="img/logoestat.png" id="estatLogo">
+											</a>
+										</div>
+									<div id="navbarNavDesktop" class="navbar-nav mr-auto socialmedia collapse navbar-expand-sm navbar-collapse">
+										<ul id="social-container" class="navbar-nav mr-auto socialmedia">
+										</ul>
+									</div>
+							</header>
+						</div>
+					</div>
+			<div id="titles" class="row text-center">
+				<div class="col mx-auto" id="titlesConteiner">
+					<h3  id="chart_title" class="title"></h3>
+					<h5  id="chart_subtitle" class="subtitle"></h5>
+					<div id="dropdown-container"></div>
+					<select class="indicator-select" id="selectIndi" style="display:none">
+					</select>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col mx-auto">
+						<div id="chart"></div>
+						<div id="legend"></div>
+						<div id="chartSort" ></div>	
+						<div id="chartInd" style="display:none"  >
+						</div>
+					</div>
+				</div>
+				<div id="chartFooter" class="row text-center">
+					<div class="col side">
+						<div id="icons-container" class="d-flex justify-content-center"></div>
+					</div>
+					<div class="col">
+					  <div id="icons-container" class="d-flex justify-content-center"></div>
+					  <span  id="footnote" class="footnote"></span>
+					  <div id="bookmark-link"><a target="_blank" href="#" class="infolink"></a></div>
+					</div>
+					<div class="col side">
+						<div class="d-flex justify-content-end">
+							<div id="cookies-link" style="float:left; margin-right: 25px;display:none">
+								<a href="https://ec.europa.eu/info/cookies_en"  target="_blank"><span translate="cookies_policy"></span></a> |
+								<a href="https://ec.europa.eu/info/privacy-policy_en" target="_blank"><span translate="privacy_policy"></span></a> | 
+								<a href="https://ec.europa.eu/info/legal-notice_en" target="_blank"><span translate="legal_notice"></span></a></div>
+						</div>
+					</div>
+					</div>
+				  </div>
+
+		</div>
+		<div id="container-modal-embed" class="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+				<div class="modal-dialog modal-lg" role="document">
+				  <div class="modal-content">
+					<div id="embed-header" class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div id="embed" class="modal-body">
+					</div>
+					<div class="modal-footer">
+					</div>
+				  </div>
+				</div>
+			  </div>
+		<div id="container-modal-share" class="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+				<div id="share-header" class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div id="share" class="modal-body">
+					<div class="list-group" id="share-list">
+					<a class="list-group-item" href="#">
+						<i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Embed</a>
+					<a class="list-group-item" href="#">
+						<i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Tweet</a>
+					<a class="list-group-item" href="#">
+						<i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Share</a>
+					</div>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+		</div>
+		<div id="container-modal-instructions" class="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+							<div id="instructions-header" class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+									</button>
+							</div>
+							<div id="instructions" class="modal-body">
+							</div>
+							<div class="modal-footer">
+							</div>
+					</div>
+			</div>
+	</div>
+	<div id="dummy">
+      <div class="row text-center">
+        <div class="col mx-auto">
+          <div id="linechart"></div>
+        </div>
+    </div>
+      <div class="col mx-auto">
+        <div id='legend-container-mobile' class="legendcontainer-mobile" style="margin-bottom: 5px;"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12 mx-auto">
+          <div id="icons-container" class="d-flex justify-content-center"></div>
+        </div>
+      </div>
+		</div>
+		<div id="loader" style="position: fixed; top: 0; left: 0;  height: 100%; width: 100%; background: white;z-index:999;">
+				<div style="position: fixed; height: 10%; width: 10%; left: 45%; top: 45%">
+					<div class="row justify-content-center align-items-center fa-3x">
+						<i class="fas fa-spinner fa-spin"></i>
+					</div>
+				</div>
+			</div>
+		<script type="text/javascript" src="./l10n/localisations.js" charset="utf-8"></script>
+		
+    <script src="npm.core-js.0784289bbf7b07d98653.js"></script><script src="npm.d3.0107a56997fad0a3c3b7.js"></script><script src="npm.d3-geo.c0a51649f118b8909460.js"></script><script src="npm.d3-shape.79fc692f99b2ba468729.js"></script><script src="npm.d3-selection.91f609ed81a69ea164d1.js"></script><script src="npm.d3-array.e20e447236c77ac1eb2c.js"></script><script src="npm.d3-hierarchy.68ee87112d15a02f9628.js"></script><script src="npm.d3-transition.acf731af8fc6db5ef17c.js"></script><script src="npm.d3-interpolate.1414e3e27fea5dc56c98.js"></script><script src="npm.d3-scale.6f9f9117e5ed1fe1a63e.js"></script><script src="npm.d3-time.9a98adab4967bd9941b8.js"></script><script src="npm.d3-format.36a2658175098ff71938.js"></script><script src="npm.d3-quadtree.a16f42394994a6b0f0ad.js"></script><script src="npm.d3-ease.1173dd4cf05148f01118.js"></script><script src="npm.d3-force.3501f39ddc99bad674cd.js"></script><script src="npm.d3-request.3b2999f1efd256c49a71.js"></script><script src="npm.d3-voronoi.42704bd17e5ab0ec8f27.js"></script><script src="npm.d3-random.9182aafa4f9963016ec8.js"></script><script src="npm.d3-collection.7f10b3f664d940c45aff.js"></script><script src="npm.d3-polygon.6d75015892894929a4a5.js"></script><script src="npm.d3-chord.d54dc18e66da3e130b13.js"></script><script src="npm.d3-color.ac168fda97494c9fec9a.js"></script><script src="npm.d3-drag.3d36ea82cc91cdfb78bf.js"></script><script src="npm.d3-zoom.ddebe489d997d7ca3cc3.js"></script><script src="npm.d3-brush.416e192bcd2885c906c9.js"></script><script src="npm.d3-dsv.58255c094eb9a5d2483b.js"></script><script src="npm.d3-time-format.9c0aca9241e62f7055ee.js"></script><script src="npm.fortawesome.77b6bf014401a1e15bdd.js"></script><script src="npm.d3-axis.ae1834573a90463ff52d.js"></script><script src="npm.d3-timer.853f544e87f7e275d393.js"></script><script src="npm.billboard.js.a000f7d600be74495dc6.js"></script><script src="npm.bootstrap-select-v4.57f7f768c835330fddb5.js"></script><script src="npm.bootstrap.6cb31cde53b669cbef98.js"></script><script src="npm.d3-queue.f8b8c184b194cf6e2260.js"></script><script src="npm.d3-dispatch.6d36702917a3d6a97aad.js"></script><script src="npm.d3-path.ceb564d4c53fd38525a4.js"></script><script src="npm.jquery-csv.63077f32e87198eb5287.js"></script><script src="npm.jquery.77bfdbb7ddf3ffb83d14.js"></script><script src="npm.jsonstat.ff4efd0df7fdcec5c284.js"></script><script src="npm.l10n.js.0e27db05c56cc07e3902.js"></script><script src="npm.popper.js.94607cb322910f2e64a4.js"></script><script src="npm.process.20c9df48246e98fa911f.js"></script><script src="npm.regenerator-runtime.661cc257efd29fe8ff1c.js"></script><script src="npm.setimmediate.4993ad71745e03e41a7f.js"></script><script src="npm.timers-browserify.9a283e5534e1d46b517b.js"></script><script src="npm.webpack.8f05a5576aba230082c3.js"></script><script src="stackedbarchart.7dbdc4a60c91962ee88c.js"></script></body>
+</html>
