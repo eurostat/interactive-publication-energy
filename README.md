@@ -271,3 +271,17 @@ IMPORTANT: The next instruction only works with Firefox Browser, all other brows
 Once the default language has been changed, double click the "index.html" file and the tool should show the new default language.
 
 You can also force any configured language to be shown by adding a parameter to the URL. But this will only work if the files are served by a web server and not if you open the index.html directly with a browser from your desktop.
+
+
+## Changing default language 
+Step-by-step guide to change the standard language to be displayed
+If you plan to change the standard language from "en" to the language we just have added, follow those steps:
+
+Once again, we have to open the "localisation.js" file contained in the l10n folder.
+Change in Line 1 'en' to 'es'. The result should like this:
+
+### Spanish as default language
+```js
+window.defaultLanguage = 'es';
+```
+Now you can open up the publication in a Browser and it should be using your newly added Spanish language by default.
